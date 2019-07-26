@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Computed Propertis</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    
+    <div id="app">
+        <p>原始字符串：{{ my_text }}</p>
+        <p>通过运算后得到的字符串：{{ my_computed_text }} </p>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                my_text: 'good good study,day day up'
+            },
+            computed: {
+                my_computed_text: function(){
+                    //先去掉逗号，按照空格分割成数组，然后翻转，并用'-'连接
+                    //有点像过滤器干的活
+                    return this.my_text.replace(',','').split(' ').reverse().join('-')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

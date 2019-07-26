@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>跑马灯</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="猥琐发育" @click="fayu">
+        <input type="button" value="别浪" @click="lang">
+
+        <h2>{{ msg }}</h2>
+    </div>
+
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "回防高地~~~",
+                intervalId: null
+            },
+            methods: {
+                lang(){
+                    if(this.intervalId != null){
+                        this.intervalId = null;
+                        return;
+                    }
+
+                    //定时器
+                    this.intervalId = setInterval(() => {
+                        console.log(this.msg);
+                        var start = this.msg.substring(0,1);
+                        var end = this.msg.substring(1);
+                        this.msg = end + start;
+                    },400)
+
+                },
+                fayu(){
+                    clearInterval(this.intervalId);
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

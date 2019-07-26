@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<head>
+    <meta http- equiv=" content-type" content="text/html; charset=UTF-8 ">
+
+    <link rel="stylesheet" type="text/cs s " href="https://unpkg.com/todomvc-app-css@2.0.6/index.css">
+    <script type="text/javascript" src="https://unpkg.com/vue@latest/dist/vue.js">
+    </script>
+    <script type="text/javascript">
+
+    </script>
+</head>
+
+<body>
+    <section class="todoapp">
+
+        <header class="header">
+            <hl>todos</hl>
+            <input class="new-todo" autofocus autocomplete="off" placeholder=" What needs to be done ?"
+                v-model="newTodo" @keyup.enter="addTodo">
+        </header>
+        <section class="main" v-show="todos.length" v-cloak>
+
+        </section>
+</body>
+
+</html>
