@@ -4,4 +4,4 @@
 > watched
 > watch根据监听其他的变量而自身发生变化
 
-[监听器](https://github.com/MisterChegy/vue-learn/blob/master/image/watch.gif)
+![监听器](https://github.com/MisterChegy/vue-learn/blob/master/image/watch.gif)
